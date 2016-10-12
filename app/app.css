@@ -1,0 +1,43 @@
+
+Page {
+  background-color: #FFF;
+  font-size: 15;
+  line-height: 1.2;
+}
+ActionBar {
+  background-color: black;
+  color: white;
+}
+TextField {
+  padding: 10;
+  font-size: 13;
+}
+.small-spacing {
+  margin: 5;
+}
+.medium-spacing {
+  margin: 10;
+}
+
+.innerPage{
+	background-color: #FFF;
+}
+
+.searchContainer {
+  background-color: #1e1e1e;
+  padding: 0 10px 10px;
+}
+.searchBox {
+  background-color: #fff;
+  font-size: 16px;
+  padding: 2;
+  vertical-align: middle;
+}
+.searchBox TextField {
+  background-color: #fff;
+  text-decoration: none;
+  vertical-align: middle;
+}
+.searchBox Button {
+  vertical-align: middle;
+}

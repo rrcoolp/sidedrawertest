@@ -1,0 +1,83 @@
+<!--<ActionBar>
+	<ActionBar.titleView>
+		<GridLayout class="actionbar" rows="auto">
+			<StackLayout orientation="horizontal" col="0" rows="auto" horizontalAlignment="left" columns="*,*">
+				<Image col="0" class="actionBack" src="res://ic_arrow_back" (tap)="goBack()" height="30" width="30" [visibility]="showBackButton ? 'visible' : 'collapsed'"></Image>
+				<Image col="1" src="res://ic_menu" height="30" width="30" class="actionRHS" (tap)="toggleDrawerState()"></Image>
+			</StackLayout>
+			<Image col="1" src="res://logo" height="40" horizontalAlignment="center" verticalAlignment="top" class="action-image"
+				(tap)="gotoHomepage()"></Image>
+			<Label col="2" text="" class="actionRHS" (tap)="navigateBasket()" horizontalAlignment="right"></Label>
+		</GridLayout>
+	</ActionBar.titleView>
+</ActionBar>-->
+
+
+
+
+<StackLayout>
+
+
+
+	<RadSideDrawer #drawer drawerLocation="Left">
+		<ScrollView tkDrawerContent>
+			<StackLayout class='menuContainer' style="background-color: #fefefe;font-size:16px;">
+				<Label col="0" [text]="CustomerName()" verticalAlignment="center" textWrap="true"></Label>
+				<Button style="color:#000;" [text]="getLoginLabel()" verticalAlignment="center" (tap)="commongLoginLogout()"></Button>
+				<Label style="height:10px;"></Label>
+				<StackLayout style="">
+					<StackLayout class='link' orientation="horizontal" verticalAlignment="center" (tap)="gotoHomepage()">
+						<Label text="Home" verticalAlignment="center"></Label>
+					</StackLayout>
+					<StackLayout class='link' orientation="horizontal" (tap)="navigateBasket()">
+						<Label text="Basket" verticalAlignment="center"></Label>
+					</StackLayout>
+					<Label text="Test" style="padding: 10px;" (tap)="navigateTest()"></Label>
+					<Label text="Promotions" style="padding: 10px;"></Label>
+					<Label text="Labels" style="padding:10px;background-color: lightgray;"></Label>
+					<Label text="Important" style="padding: 10px;"></Label>
+					<Label text="Starred" style="padding: 10px;"></Label>
+					<Label text="Sent Mail" style="padding: 10px;"></Label>
+					<Label text="Drafts" style="padding: 10px;"></Label>
+				</StackLayout>
+			</StackLayout>
+		</ScrollView>
+		<StackLayout tkMainContent>
+			<StackLayout class="searchContainer">
+				<GridLayout columns="*" rows="auto" class="searchBox" borderRadius="5">
+					<TextField col="0" #txtSearch hint="Search by keyword / quick find code" [(ngModel)]="searchValue" (ngModelChange)="Search()"
+						autocapitalizationType="none" verticalAlignment="center"></TextField>
+				</GridLayout>
+			</StackLayout>
+			<GridLayout class="innerPage">
+				<StackLayout col="0" row="0">
+					<router-outlet></router-outlet>
+				</StackLayout>
+				<StackLayout col="0" row="0" height="100%" width="100%" [class]="PageActivityIndicator ? 'animatedFadeIn' : 'animatedFadeOut'"
+					style="opacity:0;background-color:rgba(255, 255, 255, 1);"></StackLayout>
+				<ActivityIndicator col="0" row="0" height="50" [busy]="PageActivityIndicator" [visibility]="PageActivityIndicator ? 'visible' : 'collapsed'"></ActivityIndicator>
+			</GridLayout>
+		</StackLayout>
+	</RadSideDrawer>
+	<!--<StackLayout class="searchContainer">
+				<GridLayout columns="*" rows="auto" class="searchBox" borderRadius="5">
+					<TextField col="0" #txtSearch hint="Search by keyword / quick find code" [(ngModel)]="searchValue" (ngModelChange)="Search()"
+						autocapitalizationType="none" verticalAlignment="center"></TextField>
+				</GridLayout>
+			</StackLayout>
+			<GridLayout class="innerPage">
+				<StackLayout col="0" row="0">
+					<router-outlet></router-outlet>
+				</StackLayout>
+				<StackLayout col="0" row="0" height="100%" width="100%" [class]="PageActivityIndicator ? 'animatedFadeIn' : 'animatedFadeOut'"
+					style="opacity:0;background-color:rgba(255, 255, 255, 1);"></StackLayout>
+				<ActivityIndicator col="0" row="0" height="50" [busy]="PageActivityIndicator" [visibility]="PageActivityIndicator ? 'visible' : 'collapsed'"></ActivityIndicator>
+			</GridLayout>-->
+
+	<!--<GridLayout rows="auto, auto" verticalAlignment="center">
+    <router-outlet></router-outlet>
+  </GridLayout>  -->
+
+	<!--<router-outlet></router-outlet>-->
+
+</StackLayout>
